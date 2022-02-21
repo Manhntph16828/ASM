@@ -17,10 +17,15 @@ const Product ={
                	<div class="sort-by">
 		            <label>Sắp xếp</label>
 		            <select>
-		                            <option value="">
-		                    Tên                </option>
-		                            <option value="">
-		                    Gía                </option>
+							<option value="">
+								Danh mục
+							</option>
+		                    <option value="">
+		                    	Tên
+							</option>
+							<option value="">
+							Giá
+						</option>    
 		            </select>
 		            <a href=""><img src="images/arrow2.gif" alt="" class="v-middle"></a>
                </div>

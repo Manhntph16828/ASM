@@ -10,7 +10,7 @@ const Header = {
                      <li><a>
                         <span id="account" class="text-red"></span>
                      </a></li> |
-                     <li><a >${localStorage.getItem('username') ? '<button id="logout">Logout</button>' : ""}</a></li> |
+                     <li><a >${localStorage.getItem('user') ? '<button id="logout">Logout</button>' : ""}</a></li> |
                      <li><a href="/signin">Đăng nhập</a></li> |
                      <li><a href="/signup">Đăng ký</a></li>
                  </ul>
@@ -63,7 +63,6 @@ const Header = {
         const account = document.querySelector('#account');
         const btnLogout = document.querySelector('#logout');
         account.innerHTML = JSON.parse(localStorage.getItem('user')).username;
-
         btnLogout.addEventListener('click', function(){
            localStorage.removeItem('user');
            alert('Ban da logout thanh cong');

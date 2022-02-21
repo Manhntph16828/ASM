@@ -34,10 +34,7 @@ const SanphamHome = {
             <div class="col_1_of_3 span_1_of_3">
 				
 				</div>
-            `;
-
-
-        
+            `; 
     
     },
 };

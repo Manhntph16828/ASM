@@ -11,37 +11,42 @@ const CartPage = {
         if(localStorage.getItem('cart')){
             cart = JSON.parse(localStorage.getItem('cart'));
         }
-        return `
+        return /*html*/`
         <header>
 		${Header.render()} 
 		</header>
             <table class="ml-40 mt-20">
                 <thead>
-                    <tr>
-                        <th class="text-left ">Tên sản phẩm</th>
-                        <th class="text-left mr-8">Giá sản phẩm</th>
+                    <tr class="">
                         <th class="text-left mr-8">Hình</th>
+                        <th class="text-left w-80 pl-8">Tên sản phẩm</th>
+                        <th class="text-left pr-8">Giá sản phẩm</th>
+                        
                         <th class="text-left">Số lượng</th>
                         <th>
 
                         </th>
+                        <th class="text-left pr-10">Tiền</th>
                     </tr>
                 </thead>
                 <tbody>
-
-                    ${cart.length > 0 ? cart.map(item => `
+                    ${cart.length > 0 ? cart.map(item => /*html*/`
+                    
                         <tr>
-                            <td>${item.name}</td>
-                            <td>${item.price}</td>
-                            <td><img src="${item.img}" alt="" class="w-24 h-22"></td>
+                        <td><img src="${item.img}" alt="" class="w-24 h-22"></td>
+                            <td class="pl-8">${item.name}</td>
+                            <td >${item.price}</td>
+                            
                             <td>
-                                <input type="number" value="${item.quantity}" class="border border-gray-400 p-3" />
+                                
                                 <button data-id="${item.id}" class="btn btn-increase inline-block p-3 bg-green-500 text-white">Tăng</button>
+                                <input type="number" value="${item.quantity}"  class="border border-gray-400 p-3" />
                                 <button data-id="${item.id}" class="btn btn-decrease inline-block p-3 bg-orange-500 text-white">Giảm</button>
                             </td>
                             <td>
                             <button data-id="${item.id}" class="btn btn-remove inline-block p-3 bg-red-500 text-white">Xóa</button>
                             </td>
+                            <td>${item.price*item.quantity}</td>
                         </tr>
                     `).join("") : `
                         <tr>
@@ -51,9 +56,8 @@ const CartPage = {
                     
                 </tbody>
             </table>
-
         <footer>${Footer.render()}</footer>
-        `
+        `;
     },
     afterRender(){
         $(".btn").forEach(btn => {
