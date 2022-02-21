@@ -10,7 +10,6 @@ import AdminAddPro from "./pages/admin/pro/add";
 import AdminEditPro from "./pages/admin/pro/edit";
 import Product from "./pages/product";
 import CartPage from "./pages/cart";
-// hais
 import ProductsPage from "./pages/product";
 import DetailProductPage from "./pages/product/detail";
 import Sanpham from "./components/sp";
