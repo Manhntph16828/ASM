@@ -12,12 +12,12 @@ const HomePage = {
             <header>
                 ${Header.render()} 
             </header>
-           
+			<img src="../images/banner.jpg" alt=""/>
 			<div id="fwslider">
 			<div class="slider_container">
 				<div class="slide"> 
 					<!-- Slide image -->
-						<img src="images/banner.jpg" alt=""/>
+						<img src="../images/banner.jpg" alt=""/>
 					<!-- /Slide image -->
 					<!-- Texts container -->
 					<div class="slide_content">
@@ -49,7 +49,8 @@ const HomePage = {
 			<div class="slidePrev"><span></span></div>
 			<div class="slideNext"><span></span></div>
 		</div>
-           
+		</div>
+		    
     <!--/slider -->
 		<div class="main">
 			<div class="wrap">
@@ -86,6 +87,7 @@ const HomePage = {
 			</div>
 		</div>
 		</div>
+		
 		<footer>
 		${Footer.render()}
 		</footer>

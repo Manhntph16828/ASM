@@ -13,7 +13,7 @@ const CartPage = {
         }
         return /*html*/`
         <header>
-		${Header.render()} 
+		    ${Header.render()} 
 		</header>
             <table class="ml-40 mt-20">
                 <thead>
@@ -44,8 +44,7 @@ const CartPage = {
                                 <button data-id="${item.id}" class="btn btn-decrease inline-block p-3 bg-orange-500 text-white">Giảm</button>
                             </td>
                             <td>
-                            <button data-id="${item.id}" class="btn btn-remove inline-block p-3 bg-red-500 text-white">Xóa</button>
-                            </td>
+                            <button data-id="${item.id}" class="btn btn-remove inline-block p-3 bg-red-500 text-white">Xóa</button>                            </td>
                             <td>${item.price*item.quantity}</td>
                         </tr>
                     `).join("") : `
@@ -53,7 +52,6 @@ const CartPage = {
                             <td colspan="4">No record</td>
                         </tr>
                     `}
-                    
                 </tbody>
             </table>
         <footer>${Footer.render()}</footer>
@@ -75,7 +73,8 @@ const CartPage = {
                     })
                 }
             })
-        }) 
+        })
+       
     }
 };
 export default CartPage;

@@ -70,6 +70,20 @@
       "price": "245000",
       "desc": "Áo polo nam màu đen tay phối trắng HIDDLE là sự lựa chọn tuyệt vời không thể thiếu trong tủ quần áo của các quý ông hiện đại. Với thiết kế tối giản nhưng không quá đơn điệu đem lại sự trẻ trung, năng động và thanh lịch cần thiết cho người mặc. Mẫu áo này luôn nằm trong top đầu doanh thu những mẫu áo Polo bán chạy nhất Hiddle.",
       "id": 6
+    },
+    {
+      "name": "Áo khoác gió HI 100122",
+      "price": "4000000",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645452446/yms350xdiug4tyzfgapi.jpg",
+      "desc": "Mô tả",
+      "id": 7
+    },
+    {
+      "name": "Áo khoác bomber nỉ nhung HI 80222",
+      "price": "200000",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645452492/lzx4z49fbaasyedzongk.jpg",
+      "desc": "Mô tả 3",
+      "id": 8
     }
   ],
   "users": [

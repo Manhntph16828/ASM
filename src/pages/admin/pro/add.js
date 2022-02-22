@@ -1,12 +1,14 @@
 import axios from "axios";
 import { add } from "../../../api/product";
-import NavAdmin from "../../../components/AdminNav";
+import AdminNav from "../../../components/AdminNav";
+import $ from 'jquery';
+import validate from 'jquery-validation';
 
 const AdminAddPro = {
   render() {
     return /*html*/ `
         <div class="min-h-full">
-        ${NavAdmin.render()}
+        ${AdminNav.render()}
       
         <header class="bg-white shadow">
           <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -34,33 +36,34 @@ const AdminAddPro = {
         <main>
           <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             <!-- Replace with your content -->
-            <form action="" id="form-add" >
+            <form action="" id="form-add">
             Tên sản phẩm <br/>
               <input type="text"
                     id="name-pro"
-                    class="border border-black w-80 mt-2 mb-4"
+                    class="border border-black"
                     placeholder="Name"
+                    name="name-pro"
+                    style="margin-bottom:-1px;width:500px"
               > <br />
-              Giá <br/>
+              Giá<br/>
               <input type="text"
-                    id="price-pro"
-                    class="border border-black w-80 mt-2 mb-4"
-                    placeholder="Price"
+              id="price-pro"
+              class="border border-black "
+              placeholder="Price"
+              style="margin-bottom:-1px;width:500px"
               > <br />
-              Hình ảnh  <br />
+              Ảnh <br/>
               <input type="file"
                     id="img-pro"
-                    class="border border-black w-80 mt-2 mb-4"
+                    class="border border-black"
                     placeholder="Image"
+                    style="width:500px"
               > <br />
-              
-              <img class="w-80" src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg" id="img-preview"/>
-              <div >
-                Mô tả sản phẩm<br/>
-                <textarea name="" id="desc-pro" cols="30" rows="10" class="border border-black w-80 mt-2 mb-4"></textarea><br />
-                <button class="bg-blue-500 p-4 text-white w-40 h-14">Thêm</button>
-              </div>
-              </form>
+              <img style="margin-top:-260px;width:500px" src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg" id="img-preview"/>
+              Mô tả<br/>
+              <textarea name="" id="desc-pro" cols="30" rows="10" class="border border-black" style="margin-bottom:-1px;width:500px"></textarea><br />
+              <button class="bg-blue-500 p-4 text-white">Thêm</button>
+            </form>
             <!-- /End replace -->
           </div>
         </main>
@@ -69,45 +72,61 @@ const AdminAddPro = {
         `;
   },
   afterRender() {
-    const formAdd = document.querySelector("#form-add");
+    const formAdd = $("#form-add");
     const imgPost = document.querySelector('#img-pro');
     const imgPreview = document.querySelector('#img-preview');
-    
+
     const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/ecommercer2021/image/upload"
     const CLOUDINARY_PRESET = "jkbdphzy";
+
+    let imgLink = "";
     
     // preview image when upload
     imgPost.addEventListener('change', async (e) => {
       imgPreview.src = URL.createObjectURL(e.target.files[0]);
     });
 
-    formAdd.addEventListener("submit", async(e) => {
-      e.preventDefault();
-      const file = imgPost.files[0];
-
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', CLOUDINARY_PRESET);
-
-    // call api cloudinary
-    
-      const response = await axios.post(CLOUDINARY_API, formData, {
-        headers: {
-          "Content-Type": "application/form-data"
+    formAdd.validate({
+      rules: {
+        "name-pro":{
+					required: true,
+					minlength: 5
+				},
+      },
+      messages: {
+        "name-pro": {
+					required: "Không được để trống trường này!",
+					minlength: "Nhập ít nhất 5 ký tự"
+				},
+      },
+      
+      submitHandler:  function() {
+        async function addProduct(){
+          const file = imgPost.files[0];
+          if(file){
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', CLOUDINARY_PRESET);
+      
+            // call api cloudinary
+          
+            const { data } = await axios.post(CLOUDINARY_API, formData, {
+              headers: {
+                "Content-Type": "application/form-data"
+              }
+            });
+            imgLink = data.url;
+          }
+          add({
+            name: document.querySelector('#name-pro').value,
+            price: document.querySelector('#price-pro').value,
+            img: imgLink ? imgLink : "",
+            desc:document.querySelector('#desc-pro').value,
+          });
         }
-      });
-      console.log(response.data.url);
-
-      add({
-        name: document.querySelector('#name-pro').value,
-        img: response.data.url,
-        price:document.querySelector('#price-pro').value,
-        desc:document.querySelector('#desc-pro').value,
-      });
-
+        addProduct();
+      }
     });
-
-    
   },
 };
 export default AdminAddPro;
