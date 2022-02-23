@@ -3,6 +3,7 @@ import Dashboard from "./pages/admin/dashboard";
 import AdminNewsPage from "./pages/admin/news";
 import AdminProPage  from "./pages/admin/pro";
 import AdminCatePage  from "./pages/admin/category";
+import AdminContactPage  from "./pages/admin/contact";
 import AdminNews from "./pages/admin/news";
 import AdminCate from "./pages/admin/category";
 import News from "./components/news";
@@ -59,6 +60,7 @@ router.on({
     "/admin/dashboard": () => print(Dashboard),
     "/admin/news": () => print(AdminNewsPage),
     "/admin/pro": () => print(AdminProPage),
+    "/admin/contact": () => print(AdminContactPage),
     "/admin/category": () => print(AdminCatePage),
     "/admin/news/add": () => print(AdminAddNews),
     "/admin/pro/add": () => print(AdminAddPro),

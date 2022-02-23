@@ -14,7 +14,8 @@ const AdminNav = {
                   <a href="/admin/dashboard" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Thống kê</a>
                   <a href="/admin/pro" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sản phẩm</a>
                   <a href="/admin/category" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Danh mục</a>
-                </div>
+                  <a href="/admin/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Liên hệ</a>
+                  </div>
               </div>
             </div>
             <div class="hidden md:block">
