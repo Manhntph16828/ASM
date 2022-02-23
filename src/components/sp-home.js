@@ -16,7 +16,7 @@ const SanphamHome = {
                             </div>
                             <div class="price">
                                 <div class="cart-left">
-                                    <p class="title"><a href="/products/${product.id}" >${product.name}</a></p>
+                                    <p class="title"><a href="/products/${product.id}">${product.name}</a></p>
                                     <div class="price1">
                                     <span class="actual">$${product.price}</span>
                                     </div>
@@ -29,8 +29,6 @@ const SanphamHome = {
                             `).join("")}
                 </div>
             </div>
-            
-            
             <div class="col_1_of_3 span_1_of_3">
 				
 				</div>

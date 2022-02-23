@@ -2,12 +2,16 @@ import Navigo from "navigo";
 import Dashboard from "./pages/admin/dashboard";
 import AdminNewsPage from "./pages/admin/news";
 import AdminProPage  from "./pages/admin/pro";
+import AdminCatePage  from "./pages/admin/category";
 import AdminNews from "./pages/admin/news";
+import AdminCate from "./pages/admin/category";
 import News from "./components/news";
 import AdminAddNews from "./pages/admin/news/add";
 import AdminEditNews from "./pages/admin/news/edit";
 import AdminAddPro from "./pages/admin/pro/add";
+import AdminAddCate from "./pages/admin/category/add";
 import AdminEditPro from "./pages/admin/pro/edit";
+import AdminEditCate from "./pages/admin/category/edit";
 import Product from "./pages/product";
 import CartPage from "./pages/cart";
 import ProductsPage from "./pages/product";
@@ -55,10 +59,13 @@ router.on({
     "/admin/dashboard": () => print(Dashboard),
     "/admin/news": () => print(AdminNewsPage),
     "/admin/pro": () => print(AdminProPage),
+    "/admin/category": () => print(AdminCatePage),
     "/admin/news/add": () => print(AdminAddNews),
     "/admin/pro/add": () => print(AdminAddPro),
+    "/admin/category/add": () => print(AdminAddCate),
     "/admin/news/:id/edit": ({data}) => print(AdminEditNews, data.id),
     "/admin/pro/:id/edit": ({data}) => print(AdminEditPro, data.id),
+    "/admin/category/:id/edit": ({data}) => print(AdminEditCate, data.id),
     "/signup": () => print(Signup),
     "/signin": () => print(Signin),
     "/cart": () => print(CartPage),

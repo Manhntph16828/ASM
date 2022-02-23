@@ -25,7 +25,6 @@ const HomePage = {
 							<!-- Text title -->
 							<h4 class="title">Aluminium Club</h4>
 							<!-- /Text title -->
-							
 							<!-- Text description -->
 							<p class="description">Experiance ray ban</p>
 							<!-- /Text description -->

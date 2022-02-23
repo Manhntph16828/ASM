@@ -53,7 +53,7 @@ const AdminEditNews = {
                 class="border border-black"
                 value="${data.desc}"
               ></textarea><br />
-              <button class="bg-blue-500 p-4 text-white">Cập nhật</button>
+              <button class="bg-blue-500 p-4 text-white" >Cập nhật</button>
             </form>
             <!-- /End replace -->
           </div>

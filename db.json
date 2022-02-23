@@ -12,20 +12,6 @@
       "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645185519/hplscu5igocsm1ey2tfm.jpg",
       "desc": "",
       "id": "AKuiSUv"
-    },
-    {
-      "title": "sp1",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645186462/dqn788tdxn24a1j1r3ir.jpg",
-      "price": "90000",
-      "desc": "",
-      "id": "RZG1Zuw"
-    },
-    {
-      "title": "sp2",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645257165/oz5dutugjdwuxud21qq4.jpg",
-      "price": "1111",
-      "desc": "",
-      "id": "UCIhwhI"
     }
   ],
   "products": [
@@ -84,6 +70,13 @@
       "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645452492/lzx4z49fbaasyedzongk.jpg",
       "desc": "Mô tả 3",
       "id": 8
+    },
+    {
+      "id": 9,
+      "name": "sửa",
+      "price": "200000",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645525586/e94ape7cahbdcvue3tma.jpg",
+      "desc": "mô taaaaa"
     }
   ],
   "users": [
@@ -110,6 +103,16 @@
       "password": "$2a$10$CuUosfc1KMiaxWx6wrNkBOssfm2W8...6K0pcHIPVrmMRPpS7kThi",
       "username": "manhtien",
       "id": 4
+    }
+  ],
+  "categorys": [
+    {
+      "name": "Đồ nam",
+      "id": 1
+    },
+    {
+      "name": "Đồ nũ",
+      "id": 2
     }
   ]
 }

@@ -9,7 +9,6 @@ const Sanpham = {
             <div >
                 <div class="grid grid-cols-3 gap-1 px-8 ">
                         ${data.map((product) => `
-                        
                         <div class="inner_content clearfix border p-4 ">
                             <div class="product_image">
                                 <a href="/news/${product.id}">
